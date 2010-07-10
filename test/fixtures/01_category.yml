@@ -1,0 +1,16 @@
+Category:
+  web:
+    name: Web
+    cover: web.jpg
+
+  pascal:
+    name: Pascal
+    cover: pascal.gif
+
+  matan:
+    name: Матан
+    cover: matan.jpg
+
+  students:
+    name: Студенты
+    cover: students.jpg

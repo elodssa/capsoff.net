@@ -1,0 +1,58 @@
+h1
+	{
+    	text-align: center;
+    	color: green;
+	}
+
+#form
+	{
+    	margin: auto;
+	}
+
+#text_area textarea
+	{
+    	width: 100%;
+    	height: 250px;
+    	overflow: auto;
+    	border: 1px solid #aaaaaa;
+    	background: white;
+	}
+
+#add_button
+	{
+    	text-align: center;
+    	margin-top: 10px;
+	}
+
+#add_button input
+	{
+		text-align: center;
+    	border: 1px solid #aaaaaa;
+    	background: #CCCCCC;
+		padding: 5px;
+	}
+
+#add_button input:hover
+	{
+		color: maroon;
+		text-align: center;
+    	border: 1px solid #CCCCCC;
+    	background: #DDDDDD;
+		padding: 5px;
+		cursor: pointer;
+	}
+
+#add_button input:active
+	{
+		margin: 1px;
+		text-align: center;
+    	border: 1px solid #CCCCCC;
+    	background: #DDDDDD;
+		padding: 5px;
+		cursor: pointer;
+	}
+
+#errors
+	{
+
+	}

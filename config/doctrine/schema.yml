@@ -1,0 +1,221 @@
+Category:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(200)
+      notnull: true
+    cover:
+      type: string(255)
+      notnull: false
+
+Post:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    category_id:
+      type: integer(4)
+      notnull: true
+    user_id:
+      type: integer(4)
+      notnull: false
+      default: null
+    title:
+      type: string(300)
+      notnull: true
+    text:
+      type: string(4000)
+      notnull: true
+    views:
+      type: integer(4)
+      notnull: true
+      default: 0
+    votes:
+      type: integer(4)
+      notnull: true
+      default: 0
+    is_show:
+      type: boolean
+      default: true
+  relations:
+    Profile:
+      local: user_id
+      foreign: user_id
+    Category:
+      local:  category_id
+      foreign:  id
+      foreignAlias: Posts
+    Tags:
+      class: Tag
+      refClass: PostTags
+      local: post_id
+      foreign: tag_id
+
+UserPostVoting:
+  options:
+    symfony:
+      form: false
+  columns:
+    user_id:
+      type: integer(4)
+    post_id:
+      type: integer(4)
+  relations:
+    Post:
+      local: post_id
+      foreign: id
+      type: ONE
+      onDelete: CASCADE
+      foreignAlias: PostVoting
+
+Answer:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(4)
+      notnull: false
+      default: null
+    post_id:
+      type: integer(4)
+      notnull: true
+    comment_id:
+      type: integer(4)
+      notnull: false
+      default: null
+    text:
+      type: string(4000)
+      notnull: true
+    comments:
+      type: integer(4)
+      default: null
+  relations:
+    Profile:
+      local: user_id
+      foreign: user_id
+    Post:
+      local:  post_id
+      foreign:  id
+      foreignAlias: Answers
+      onDelete: CASCADE
+    Answer:
+      local:   comment_id
+      foreign: id
+      foreignAlias: Comments
+      onDelete: CASCADE
+
+PostTags:
+  options:
+    symfony:
+      form: false
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    post_id:
+      type: integer(4)
+      primary: true
+    tag_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Post:
+      local:  post_id
+      onDelete: CASCADE
+      foreign:  id
+    Tag:
+      local:  tag_id
+      onDelete: CASCADE
+      foreign:  id
+      foreignAlias: PostsTags
+
+Tag:
+  options:
+    symfony:
+      form: false
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
+    views:
+      type: integer(4)
+      notnull: true
+      default: 0
+    posts:
+      type: integer(4)
+      notnull: true
+      default: 0
+  relations:
+    Posts:
+      class: Post
+      refClass: PostTags
+      local: tag_id
+      foreign: post_id
+
+Profile:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(4)
+      notnull: true
+    email:
+      type: string(80)
+      unique: true
+    gender:
+      type: string(16)
+      notnull: true
+      default: 'undefined'
+    fullname:
+      type: string(80)
+      notnull: false
+      default: NULL
+    avatar:
+      type: string(255)
+      default: NULL
+    know:
+      type: string(511)
+      default: null
+    want_know:
+      type: string(511)
+      default: null
+    validate:
+      type: string(17)
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignAlias: UserProfile
+      onDelete: CASCADE
+
+OnlineUser:
+  options:
+    symfony:
+      form: false
+  columns:
+    user_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Profile:
+      foreign: user_id
+      local: user_id
+      onDelete: CASCADE

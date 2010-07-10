@@ -1,0 +1,19 @@
+#online_users
+	{
+		text-align: left;
+		padding: 10px;
+		margin-bottom: 15px;
+		min-height: 60px;
+	}
+
+#online_users ul
+	{
+		padding: 0px;
+		list-style-type: none;
+	}
+
+
+#online_users ul li
+	{
+    	float: left;
+	}

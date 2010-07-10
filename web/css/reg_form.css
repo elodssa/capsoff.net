@@ -1,0 +1,29 @@
+#form
+	{
+    	margin: 20px;
+    	margin-left: 200px;
+    	margin-top: 50px;
+	}
+
+input
+	{
+    	height: 20px;
+    	width: 350px;
+	}
+
+.button
+	{
+    	width: 150px;
+    	height: 30px;
+	}
+
+.help
+	{
+    	font-size: 13px;
+	}
+
+.error
+	{
+    	color: red;
+    	font-style: italic;
+	}

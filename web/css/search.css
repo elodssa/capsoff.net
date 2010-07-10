@@ -1,0 +1,28 @@
+#search
+	{
+    	text-align: left;
+		margin-bottom: 15px;
+    	padding:   25px;
+    	padding-bottom: 16px;
+	}
+
+#search #search_keywords
+	{
+		width: 150px;
+		margin-top: 3px;
+	}
+
+#search form
+	{
+		margin-left: 20px;
+	}
+
+#results_type
+	{
+		font-size:10px;
+	}
+
+.query
+	{
+    	background: yellow;
+	}

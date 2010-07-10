@@ -1,0 +1,6 @@
+indexSuccess:
+  stylesheets: []
+
+newSuccess:
+  stylesheets: [post_form.css]
+  javascripts: [ckeditor/ckeditor.js,ckeditor/adapters/jquery.js,new_post.js]

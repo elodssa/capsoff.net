@@ -1,0 +1,213 @@
+#-----------Роутинг-поиска-------------------
+
+all_search:
+  url: /search
+  param: { module: search, action: allSearch }
+
+post_search:
+  url: /search/post
+  param: { module: search, action: postSearch }
+
+comment_search:
+  url: /search/comment_search
+  param: { module: search, action: commentSearch }
+
+user_search:
+  url: /search/user_search
+  param: { module: search, action: userSearch }
+
+#-----------Роутинг-комментов-------------------
+
+answer_new:
+  url: /answer/new/:post_id
+  params: { module: answer, action: new }
+
+answer_create:
+  url: /answer/create/:post_id
+  params: { module: answer, action: create }
+
+comment_new:
+  url: /comment/new/:post_id/:comment_id
+  params: { module: comment, action: new }
+
+comment_create:
+  url: /comment/create/:post_id/:comment_id
+  params: { module: comment, action: create }
+
+
+#-----------Роутинг-тэгов--------------------
+
+tags:
+  url: /tags
+  class:    sfRoute
+  param:    { module: tag, action: index }
+
+tag_show:
+  url: /tag/:id
+  class:    sfDoctrineRoute
+  param:    { module: tag, action: show }
+  options:  { model: Tag, type: object }
+
+tag:
+  class:   sfDoctrineRouteCollection
+  options: { model: Tag }
+
+#-----------Роутинг-рубрик--------------------
+
+categories:
+  url: /categories
+  class:    sfDoctrineRoute
+  options:  { model: Category, type: list }
+  param:    { module: category, action: index }
+
+category_show:
+  url: /category/show/:id
+  class:    sfDoctrineRoute
+  param:    { module: category, action: show }
+  options:  { model: Category, type: object }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+#-----------Роутинг-постов--------------------
+
+posts:
+  url: /posts
+  class:    sfRoute
+  param:    { module: post, action: index }
+
+post_show:
+  url: /post/show/:id
+  param:    { module: post, action: show }
+  class:    sfDoctrineRoute
+  options:  { model: Post, type: object }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+post_new:
+  url: /post/new
+  params: { module: post, action: new }
+
+post_create:
+  url: /post/create
+  params: { module: post, action: create }
+
+post_vote_plus:
+  url: /post/:id/vote-plus
+  class: sfDoctrineRoute
+  options: { model: Post, type: object }
+  params: { module: post, action: votePlus }
+  requirements:
+    id: \d+
+
+post_vote_minus:
+  url: /post/:id/vote-minus
+  class: sfDoctrineRoute
+  options: { model: Post, type: object }
+  params: { module: post, action: voteMinus }
+  requirements:
+    id: \d+
+
+post_vote_error:
+  url: /post/vote-error
+  params: { module: post, action: voteError }
+
+#-----------Роутинг-юзера----------------
+
+users:
+  url: /users
+  param: { module: user, action: index }
+
+user_show:
+  url: /user/:id
+  class:    sfDoctrineRoute
+  options:    { model: Profile, type: object }
+  param:      { module: user, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+user_posts:
+  url: /user/:id/posts
+  class: sfDoctrineRoute
+  options: { model: Profile, type: object }
+  param: { module: user, action: userPosts }
+  requirements:
+    id: \d+
+
+user_comments:
+  url: /user/:id/comments
+  class: sfDoctrineRoute
+  options: { model: Profile, type: object }
+  param: { module: user, action: userComments }
+  requirements:
+    id: \d+
+
+avatar_delete:
+  url: /user/avatar_delete
+  params: { module: user, action: avatarDelete }
+
+profile_edit:
+  url: /user/edit/:id
+  class: sfDoctrineRoute
+  options: { model: Profile, type: object }
+  params: { module: user, action: edit }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+user_update:
+  url: /user/update/:id
+  params: { module: user, action: update }
+  class:    sfDoctrineRoute
+  options:    { model: Profile, type: object }
+  requirements:
+    id: \d+
+    sf_method: [post]
+
+sf_guard_signin:
+  url:   /user/login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /user/logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /user/request_password
+  param: { module: sfGuardAuth, action: password }
+
+apply:
+  url:  /user/registration
+  param: { module: sfApply, action: apply }
+
+reset:
+  url: /user/reset
+  param: { module: sfApply, action: reset }
+
+resetRequest:
+  url: /user/reset-request
+  param: { module: sfApply, action: resetRequest }
+
+resetCancel:
+  url: /user/reset-cancel
+  param: { module: sfApply, action: resetCancel }
+
+validate:
+  url: /user/confirm/:validate
+  param: { module: sfApply, action: confirm }
+
+settings:
+  url: /user/settings
+  param: { module: sfApply, action: settings }
+
+sf_guard_password:
+  url: /user/reset-request
+  param: { module: sfApply, action: resetRequest }
+
+#-----------Роутинг-индекса--------------------
+
+homepage:
+  url:   /
+  param:    { module: post, action: index }

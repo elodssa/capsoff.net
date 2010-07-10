@@ -1,0 +1,84 @@
+div
+	{
+    	margin-bottom: 10px;
+	}
+
+h1
+	{
+    	text-align: center;
+    	color: green;
+	}
+
+#form
+	{
+		width: 800px;
+    	margin: auto;
+	}
+
+#category select
+	{
+    	width: 100px;
+    	border: 1px solid #BBBBBB;
+    	background: white;
+    	font-size: 14px;
+	}
+
+#title textarea
+	{
+    	width: 800px;
+    	height: 20px;
+    	font-size: 16px;
+    	border: 1px solid #BBBBBB;
+    	background: white;
+	}
+
+#text_area textarea
+	{
+    	width: 800px;
+    	height: 300px;
+    	overflow: auto;
+    	border: 1px solid #BBBBBB;
+    	background: white;
+	}
+
+#tags input
+	{
+    	width: 800px;
+    	height: 20px;
+    	font-size: 16px;
+    	border: 1px solid #BBBBBB;
+    	background: white;
+	}
+
+#add_button
+	{
+    	text-align: center;
+	}
+
+#add_button input
+	{
+		text-align: center;
+    	border: 1px solid #BBBBBB;
+    	background: #CCCCCC;
+		padding: 5px;
+	}
+
+#add_button input:hover
+	{
+		color: maroon;
+		text-align: center;
+    	border: 1px solid #CCCCCC;
+    	background: #DDDDDD;
+		padding: 5px;
+		cursor: pointer;
+	}
+
+#add_button input:active
+	{
+		margin: 1px;
+		text-align: center;
+    	border: 1px solid #CCCCCC;
+    	background: #DDDDDD;
+		padding: 5px;
+		cursor: pointer;
+	}

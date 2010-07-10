@@ -1,0 +1,3 @@
+all:
+  .settings:
+    enabled_modules: [default, sfGuardGroup, sfGuardUser, sfGuardPermission, sfCaptchaGD, cnBugtrack]

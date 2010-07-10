@@ -1,0 +1,63 @@
+.tag_cloud
+	{
+		padding: 10px;
+    	font-weight: bold;
+    	text-align: center;
+    	margin-bottom: 15px;
+    	height: auto;
+		line-height: 2.3em;
+	}
+
+.tag_cloud ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+.tag_cloud li {
+	float: left;
+}
+
+.tag_cloud ul li a {
+	text-decoration: none;
+}
+
+#more
+	{
+    	text-decoration: underline;
+    	font-weight: normal;
+	}
+
+.tag_cloud
+	{
+    	font-size: 80%;
+	}
+
+.t5
+	{
+    	font-size: 90%;
+	}
+
+.t10
+	{
+    	font-size: 100%;
+	}
+
+.t15
+	{
+    	font-size: 120%;
+	}
+
+.t20
+	{
+    	font-size: 140%;
+	}
+
+.t25
+	{
+    	font-size: 160%;
+	}
+
+.t30
+	{
+    	font-size: 180%;
+	}

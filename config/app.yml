@@ -1,0 +1,24 @@
+all:
+
+
+  left_block_width:  70
+  right_block_width: 30
+
+  tags_on_cloud:          60
+  online_users_on_block:  10
+
+  posts_on_index:              10
+  posts_on_tag:                20
+  posts_on_category:           20
+  posts_on_resent_posts_block: 10
+
+  users_on_index:    20
+
+  max_post_title_length: 30
+  min_post_title_length: 50
+  max_post_text_length:  2000
+
+  search_results:        5
+
+  sfApplyPlugin:
+    sfApplyApplyForm_class: cnRegistrationForm

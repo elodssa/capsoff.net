@@ -1,0 +1,20 @@
+sfGuardUser:
+  sgu_admin:
+    username:       admin
+    password:       'admin'
+    is_super_admin: true
+
+  sgu_morseg:
+    username:       morseg
+    password:       '111111'
+    is_super_admin: false
+
+Profile:
+  sgu_admin_profile:
+    sfGuardUser:       sgu_admin
+    email:             'admin@mail.ru'
+    fullname:          'Администратор'
+
+  sgu_morseg_profile:
+    sfGuardUser:       sgu_morseg
+    email:             'morseg@yandex.ru'

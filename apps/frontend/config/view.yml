@@ -1,0 +1,17 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:         capsoff.net
+    description:   задай вопрос и получи ответ
+    keywords:      ИжГТУ, Чайковский, ЧТИ, институт, вопрос
+    language:      ru
+    #robots:       index, follow
+
+  stylesheets:    [main.css, jquery-ui-1.8.1.custom.css]
+
+  javascripts:    [jquery.js, jquery_ui.js]
+
+  has_layout:     true
+  layout:         layout

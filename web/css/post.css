@@ -1,0 +1,43 @@
+ul
+	{
+    	list-style-type: none;
+	}
+
+.answer_text
+	{
+    	text-indent: justify;
+	}
+
+#post_and_comments
+	{
+    	margin-left: 50px;
+    	margin-top:  10px;
+	}
+
+.post_container
+	{
+    	margin-bottom: 10px;
+	}
+
+.post_container i
+
+	{
+		font-size: 10px;
+		color: red;
+	}
+
+.tags
+	{
+    	font-size: 14px;
+	}
+
+.comment_container ul
+	{
+		list-style-type: none;
+	}
+
+.comment_container i
+	{
+		font-size: 10px;
+		color: red;
+	}

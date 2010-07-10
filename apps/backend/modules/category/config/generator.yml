@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Category
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          category_category
+    with_doctrine_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        max_per_page: 50
+        title: Category Manager
+        batch_actions: {}
+        layout: stacked
+        display: [name]
+        params:  |
+          <div style="background: white; border: 1px solid #aaaaaa; padding: 10px; width: 250px; text-align: center">
+          <span style="font-size: 20px; font-weight: bold">%%name%%</span><br>
+          Posts in category: <small>%%count_category_posts%%</small>
+          </div>
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing category %%name%%
+      new:     ~

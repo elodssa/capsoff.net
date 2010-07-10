@@ -1,0 +1,21 @@
+.pager
+	{
+		min-width: 100px;
+		max-width: 250px;
+		font-family: Arial;
+		margin: 0 auto;
+	}
+
+.pager:hover
+	{
+    	cursor: default;
+	}
+
+.pager a:visited
+	{
+	}
+
+.pager a:hover
+	{
+    	color: red;
+	}

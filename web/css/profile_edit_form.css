@@ -1,0 +1,21 @@
+#form
+	{
+    	margin: 20px;
+	}
+
+#fullname input, #email input, #avatar input, #know input, #want_know input, #captcha input, #password input
+	{
+    	height: 20px;
+    	width: 200px;
+	}
+
+.button
+	{
+    	width: 150px;
+    	height: 30px;
+	}
+
+.help
+	{
+    	font-size: 13px;
+	}
