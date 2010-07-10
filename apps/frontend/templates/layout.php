@@ -16,7 +16,7 @@
 
 <div id="top">
 	<div id="logo">
-		<img border="1" alt="logo" width="50" height="50">
+		<img src="/images/logo.png" alt="logo">
 	</div>
 </div>
 	<a name="top"></a>

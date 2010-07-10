@@ -3,12 +3,8 @@
     use_helper('Text');
 
     use_stylesheet('posts.css');
-    use_stylesheet('highlight/styles/default.css');
-    use_stylesheet('highlight/styles/vs.css');
 
     use_javascript('rating.js');
-    use_javascript('highlight/highlight.pack.js');
-    use_javascript('highlight.js');
 ?>
 
 <div id="vote_notice">
@@ -66,7 +62,9 @@
 
         <!-- Теги поста	 -->
         <?php if (count($post['Tags']) != 0): ?>
-            <div class="post_tags"><img src="/images/tag.png" alt="метки">
+            <div class="post_tags">
+                <img src="/images/tag.png" alt="метки">
+                
                 <?php
                     foreach ($post['Tags'] as $tag)
                         { echo link_to($tag['name'], 'tag_show', array('id' => $tag['id'])).'&nbsp;&nbsp;'; }
@@ -103,11 +101,14 @@
                     echo '<img src="/images/loader.gif" id="loader" style="display:none">';
                     echo $minus;
                 ?>
+
+               <img src="/images/separator.png">
             </div>
 
             <div class="date">
                 <img src="/images/data.png" align="middle" title="Дата публикации">
                 <?php echo $post['created_at']; ?>
+                <img src="/images/separator.png">
             </div>
 
             <div class="autor">
@@ -118,11 +119,13 @@
                                 array('id'    => $post['Profile']['id']),
                                 array('class' => 'user_menu'));
                 ?>
+                <img src="/images/separator.png">
             </div>
 
             <div class="views">
                 <img src="/images/views.png" title="Просмотров">
                 <?php echo $post['views'] ?>
+                <img src="/images/separator.png">
             </div>
 
             <div class="comments">
@@ -132,7 +135,8 @@
 
             <?php if($sf_user->isAuthenticated()): ?>
                 <div>
-                <?php
+                    <img src="/images/separator.png">
+                    <?php
                         $url = url_for('answer_new',array('post_id' => $post['id']));
                         echo tag('img',array('src' => '/images/comment.png', 'title' => 'Комментировать'));
                         echo content_tag('a','Комментировать',array('href' => $url));
